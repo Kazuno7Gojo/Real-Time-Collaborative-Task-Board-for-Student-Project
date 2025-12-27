@@ -6,6 +6,7 @@
     boolean success = "1".equals(request.getParameter("success"));
     boolean loggedOut = "1".equals(request.getParameter("logged_out"));
 %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
