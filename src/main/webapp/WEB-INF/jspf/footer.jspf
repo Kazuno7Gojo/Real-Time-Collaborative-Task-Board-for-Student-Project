@@ -1,0 +1,5 @@
+<footer class="site-footer">
+    <div class="container">
+        <div>&copy; <%= java.time.Year.now() %> Mini&#8209;Trello &bull; Built with JSP/Servlets</div>
+    </div>
+</footer>
