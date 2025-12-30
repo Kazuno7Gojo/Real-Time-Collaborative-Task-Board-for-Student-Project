@@ -149,3 +149,4 @@ Troubleshooting
    - Ensure you are using Tomcat 10.1+ (Jakarta)
    - Check the app context path (WAR name)
 
+git commit -m "KANBAN-1 EPIC 1 – Authentication & Sessions"
