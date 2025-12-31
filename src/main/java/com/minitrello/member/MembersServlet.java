@@ -20,7 +20,6 @@ public class MembersServlet extends HttpServlet {
     private final BoardDAO boardDAO = new BoardDAO();
     private final UserDAO userDAO = new UserDAO();
 
-    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (!ensureLoggedIn(req, resp)) return;
