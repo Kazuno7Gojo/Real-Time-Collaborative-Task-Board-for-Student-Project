@@ -26,6 +26,7 @@ public class AddMemberServlet extends HttpServlet {
         if (boardIdStr == null || email == null || email.trim().isEmpty()) {
             resp.sendRedirect(req.getContextPath() + "/members?error=Missing+parameters&boardId=" + (boardIdStr == null ? "" : boardIdStr));
             return;
+            
         }
         Long boardId = Long.valueOf(boardIdStr);
         User currentUser = (User) req.getSession(false).getAttribute("user");
