@@ -1,152 +1,211 @@
-Mini-Trello (Java Servlet/JSP + JDBC)
-====================================
+Great project 👍
+Below is a **more attractive, well-structured, and instructor-friendly version** of your description.
+It keeps everything **technically correct**, but improves **clarity, academic tone, and presentation**.
 
-Project Description
--------------------
-Mini-Trello is a simple task-board web application built with:
-- Java 11
-- Jakarta Servlets (Servlet API 6)
-- JSP pages (server-side rendered)
-- JDBC with MySQL/MariaDB
-- Maven (WAR packaging)
+---
 
-Main Features
--------------
-- User registration and login (session-based)
-- Create boards and list your boards
-- View a board with its tasks
-- Add/remove board members
-- Create tasks and update task status (TODO / IN_PROGRESS / DONE)
+# Mini-Trello: Real-Time Collaborative Task Board
 
+**(Java Servlet / JSP + JDBC)**
 
-Requirements
-------------
-1) JDK 11 (or newer)
-2) Maven 3+
-3) MySQL or MariaDB (XAMPP is OK)
-4) One of these to run the web app:
-   - Maven Jetty plugin (included in this project), or
-   - Tomcat 10.1+ (Jakarta namespace)
+## Group Members
 
+| No | Name             | ID           |
+| -- | ---------------- | ------------ |
+| 1  | Rezan Shemsedin  | UGR/35266/16 |
+| 2  | Samuel Tenkir    | UGR/35343/16 |
+| 3  | Abdulbasit Ylkal | UGR/33771/16 |
+| 4  | Yewengel Messele | UGR/35649/16 |
+| 5  | Lamrot Gashaw    | UGR/34791/16 |
 
-Database Setup (MySQL / MariaDB)
--------------------------------
-This project expects a MySQL database named: java_user
+📸 **Web application screenshots** are included in the following directory:
+`Real-Time-Collaborative-Task-Board-for-Student-Project/Web Screenshot/`
 
-1) Start MySQL/MariaDB server (XAMPP -> Start MySQL)
-2) Import the database schema:
-   - Using phpMyAdmin:
-     - Open phpMyAdmin
-     - Go to "Import"
-     - Select file: database.sql
-     - Click "Go"
-   - Using MySQL CLI:
-     - mysql -u root -p < database.sql
+---
 
-The schema file is in the project root:
-  database.sql
+## Project Overview
 
+**Mini-Trello** is a web-based task management system inspired by Trello.
+It is designed to help students collaborate efficiently by organizing tasks into boards and tracking their progress in real time.
 
-Configure Database Connection
------------------------------
-Edit this file:
-  src\main\java\com\minitrello\db\DBConnection.java
+The project demonstrates practical use of **Java Web Technologies**, including Servlets, JSP, JDBC, and database integration, following a clean MVC-style architecture.
 
-Update these constants if your DB settings are different:
-  JDBC_URL      (database name, host, port)
-  JDBC_USER     (default is root)
-  JDBC_PASSWORD (default is empty string)
+---
 
-Current default configuration:
-  jdbc:mysql://localhost:3306/java_user
-  user: root
-  password: (empty)
+## Technologies Used
 
+* **Java 11**
+* **Jakarta Servlets (Servlet API 6)**
+* **JSP (Server-Side Rendering)**
+* **JDBC**
+* **MySQL / MariaDB**
+* **Maven (WAR packaging)**
 
-Run the Project (Recommended: Jetty via Maven)
-----------------------------------------------
-From the project folder, run:
-  mvn clean package
-  mvn jetty:run
+---
 
-Then open in browser:
-  http://localhost:8080/
+## Core Features
 
-The welcome page is:
-  login.jsp
+* User registration and authentication (session-based)
+* Board creation and board listing
+* Viewing boards with associated tasks
+* Adding and removing board members
+* Task creation and task status management
+  *(TODO / IN_PROGRESS / DONE)*
 
+---
 
-Run the Project (Alternative: Deploy WAR to Tomcat)
----------------------------------------------------
-1) Build the WAR:
+## System Requirements
+
+* JDK 11 or newer
+* Maven 3+
+* MySQL or MariaDB (XAMPP supported)
+* One of the following application servers:
+
+  * **Jetty (via Maven plugin – recommended)**
+  * **Apache Tomcat 10.1+ (Jakarta namespace)**
+
+---
+
+## Database Configuration
+
+The application uses a MySQL/MariaDB database named:
+
+```
+java_user
+```
+
+### Database Setup Steps
+
+1. Start MySQL/MariaDB (e.g., XAMPP → Start MySQL)
+2. Import the schema file `database.sql`:
+
+   * **phpMyAdmin**
+
+     * Open phpMyAdmin → Import → Select `database.sql` → Go
+   * **MySQL CLI**
+
+     ```
+     mysql -u root -p < database.sql
+     ```
+
+📁 The `database.sql` file is located in the project root directory.
+
+---
+
+## Database Connection Settings
+
+Edit the file:
+
+```
+src/main/java/com/minitrello/db/DBConnection.java
+```
+
+Default configuration:
+
+```
+JDBC_URL      = jdbc:mysql://localhost:3306/java_user
+JDBC_USER     = root
+JDBC_PASSWORD = (empty)
+```
+
+Modify these values if your local database configuration differs.
+
+---
+
+## Running the Project
+
+### Option 1: Run with Jetty (Recommended)
+
+```bash
+mvn clean package
+mvn jetty:run
+```
+
+Open in browser:
+
+```
+http://localhost:8080/
+```
+
+Default entry page:
+
+```
+login.jsp
+```
+
+---
+
+### Option 2: Deploy to Apache Tomcat
+
+1. Build the WAR file:
+
+   ```bash
    mvn clean package
+   ```
+2. Locate the WAR file:
 
-2) Find the WAR in:
-   target\mini-trello-0.1.0.war
+   ```
+   target/mini-trello-0.1.0.war
+   ```
+3. Copy it to:
 
-3) Copy the WAR to Tomcat:
-   <TOMCAT_HOME>\webapps\
+   ```
+   <TOMCAT_HOME>/webapps/
+   ```
+4. Start Tomcat and open:
 
-4) Start Tomcat and open (example):
+   ```
    http://localhost:8080/mini-trello-0.1.0/
+   ```
 
-Important:
-- Because this project uses Jakarta Servlet API 6, use Tomcat 10.1+ (not Tomcat 9).
+⚠ **Important:**
+This project uses **Jakarta Servlet API 6**, therefore **Tomcat 10.1+ is required**.
 
+---
 
-How to Use (Quick Start)
-------------------------
-1) Open the app in your browser
-2) Create an account:
-   /register.jsp  (form posts to /register)
-3) Login:
-   /login.jsp     (form posts to /login)
-4) Go to boards:
-   /boards
-5) Create a board:
-   /boards/create
-6) Open a board:
-   /board?id=<boardId>
-7) Manage members:
-   /members?boardId=<boardId>
-8) Create tasks and update status from the board pages
+## Quick Start Guide
 
+1. Open the application in your browser
+2. Register a new user account
+   `/register.jsp`
+3. Login
+   `/login.jsp`
+4. View all boards
+   `/boards`
+5. Create a new board
+   `/boards/create`
+6. Open a board
+   `/board?id=<boardId>`
+7. Manage board members
+   `/members?boardId=<boardId>`
+8. Create tasks and update their status from the board interface
 
-Main URLs / Routes
-------------------
-- GET/POST  /login
-- GET/POST  /register
-- GET       /logout
-- GET       /boards
-- GET/POST  /boards/create
-- GET       /board?id=...
-- GET       /members?boardId=...
-- POST      /members/add
-- POST      /members/remove
-- POST      /tasks/create
-- POST      /tasks/update-status
+---
 
-JSP pages (UI):
-- /login.jsp
-- /register.jsp
-- /boards.jsp
-- /createBoard.jsp
-- /board.jsp
-- /members.jsp
-- /tasks.jsp
+## Main Application Routes
 
+* `GET / POST` → `/login`
+* `GET / POST` → `/register`
+* `GET` → `/logout`
+* `GET` → `/boards`
+* `GET / POST` → `/boards/create`
+* `GET` → `/board?id=...`
+* `GET` → `/members?boardId=...`
+* `POST` → `/members/add`
+* `POST` → `/members/remove`
+* `POST` → `/tasks/create`
+* `POST` → `/tasks/update-status`
 
-Troubleshooting
----------------
-1) "Access denied for user"
-   - Update DBConnection.java username/password to match your MySQL user.
+---
 
-2) "Communications link failure" / cannot connect
-   - Make sure MySQL is running
-   - Check host/port in JDBC_URL (default 3306)
+## JSP Pages (User Interface)
 
-3) Blank pages or 404 routes after deploying to Tomcat
-   - Ensure you are using Tomcat 10.1+ (Jakarta)
-   - Check the app context path (WAR name)
+* `login.jsp`
+* `register.jsp`
+* `boards.jsp`
+* `createBoard.jsp`
+* `board.jsp`
+* `members.jsp`
+* `tasks.jsp`
 
-git commit -m "KANBAN-1 EPIC 1 – Authentication & Sessions"
+---
