@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+
 @WebServlet(name = "AddMemberServlet", urlPatterns = {"/members/add"})
 public class AddMemberServlet extends HttpServlet {
     private final BoardDAO boardDAO = new BoardDAO();
