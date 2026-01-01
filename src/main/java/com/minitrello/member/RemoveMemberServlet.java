@@ -38,6 +38,7 @@ public class RemoveMemberServlet extends HttpServlet {
             return;
         }
 
+        
         if (b.getOwnerId().equals(userId)) {
             resp.sendRedirect(req.getContextPath() + "/members?boardId=" + boardId + "&error=Cannot+remove+board+owner");
             return;
@@ -56,3 +57,4 @@ public class RemoveMemberServlet extends HttpServlet {
         return true;
     }
 }
+
