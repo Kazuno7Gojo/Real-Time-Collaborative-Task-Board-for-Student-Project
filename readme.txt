@@ -3,7 +3,7 @@ Below is a **more attractive, well-structured, and instructor-friendly version**
 It keeps everything **technically correct**, but improves **clarity, academic tone, and presentation**.
 
 ---
-
+you can run the project by using thid file target\mini-trello-0.1.0.war in tomcat this is compylation folder
 # Mini-Trello: Real-Time Collaborative Task Board
 
 **(Java Servlet / JSP + JDBC)**
