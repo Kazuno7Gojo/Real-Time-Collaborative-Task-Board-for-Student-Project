@@ -1,2 +1,0 @@
-This is a test file to verify Jira-GitHub integration. 
-It ensures that commits referencing the Jira issue key appear in the issue's Development panel.

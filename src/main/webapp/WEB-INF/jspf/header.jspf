@@ -1,0 +1,48 @@
+<%
+    String ctx = request.getContextPath();
+    com.minitrello.model.User user = (com.minitrello.model.User) session.getAttribute("user");
+%>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="header-left">
+            <a class="brand-link" href="<%= ctx %>/boards">
+                <div style="background: var(--primary); width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white;">
+                    <i data-lucide="monitor" style="width: 20px; height: 20px;"></i>
+                </div>
+                <span class="brand-text">Mini&#8209;Trello</span>
+            </a>
+            <nav class="nav">
+                <a href="<%= ctx %>/boards" class="nav-item">
+                    <i data-lucide="layout-dashboard" class="nav-icon" style="width:18px;height:18px;"></i>
+                    Boards
+                </a>
+                <a href="<%= ctx %>/boards/create" class="nav-item">
+                    <i data-lucide="plus-circle" class="nav-icon" style="width:18px;height:18px;"></i>
+                    Create Board
+                </a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <% if (user != null) { %>
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <%= user.getName().substring(0, 1).toUpperCase() %>
+                    </div>
+                    <span class="user-name"><%= user.getName() %></span>
+                </div>
+            <% } %>
+            <a class="btn-logout" href="<%= ctx %>/logout" title="Logout">
+                <i data-lucide="log-out" style="width:20px;height:20px;"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        lucide.createIcons();
+    });
+</script>
